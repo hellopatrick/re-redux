@@ -1,0 +1,18 @@
+div.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.item div {
+  height: 35px;
+}
+
+div.complete {
+  color: #5aa;
+  cursor: pointer;
+}
+
+div.incomplete {
+  color: #faa;
+  cursor: pointer;
+}
