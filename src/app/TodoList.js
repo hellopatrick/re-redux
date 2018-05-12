@@ -3,25 +3,16 @@ import PropTypes from "prop-types";
 
 import "./TodoList.css";
 
-function Todo(props) {
-  const completeClass = props.complete ? "complete" : "incomplete";
+class Todo extends React.Component {
+  render() {
+    const completeClass = this.props.complete ? "complete" : "incomplete";
 
-  const removeButton = props.complete ? (
-    <div />
-  ) : (
-    <div className="remove" onClick={props.onRemoveClick}>
-      🗑
-    </div>
-  );
-
-  return (
-    <div className={`${completeClass} item`}>
-      <div className="todo" onClick={props.onToggleClick}>
-        {props.text}
+    return (
+      <div className={`${completeClass} item`}>
+        <span onClick={this.props.onToggleClick}>{this.props.text}</span>
       </div>
-      {removeButton}
-    </div>
-  );
+    );
+  }
 }
 
 Todo.propTypes = {
@@ -60,10 +51,10 @@ class Input extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className="new-todo">
         <input
           type="text"
-          placeholder="What next?"
+          placeholder="Read a book?"
           value={this.state.text}
           onChange={this.onChange}
         />

@@ -1,18 +1,56 @@
 div.item {
-  display: flex;
-  justify-content: space-between;
+  margin: 0;
+  padding: 0 0 10px 0;
+  user-select: none;
+  font-size: 16px;
 }
 
-div.item div {
-  height: 35px;
-}
-
-div.complete {
-  color: #5aa;
+div.item span {
   cursor: pointer;
 }
 
-div.incomplete {
-  color: #faa;
-  cursor: pointer;
+div.item.complete {
+  color: #139c9a;
+  text-decoration-line: line-through;
+  font-weight: 300;
+}
+
+div.item.incomplete {
+  color: #fe4a49;
+  font-weight: 200;
+}
+
+.new-todo input {
+  border: 1px solid #e4572e;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 100;
+  margin: 0px;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.new-todo button {
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 100;
+  padding: 5px;
+  margin: 0px;
+  width: 75px;
+  background: #139c9a;
+  color: #fff;
+  font-weight: 500;
+}
+
+::placeholder {
+  color: #ccc;
+}
+
+.new-todo button:active {
+  background: rgb(15, 124, 122);
+}
+
+.new-todo *:focus {
+  outline: none;
 }
